@@ -23,6 +23,10 @@
         <img id="avatar2" class="avtar" src="" alt="img_url">
         <p id="demo2"></p>
     </div>
+    <div class="img4">
+        <img src="" id="avatar3" class="avtar" alt="">
+        <p id="demo3"></p>
+    </div>
 </div>    
     <script>
         let request = new XMLHttpRequest();
@@ -66,10 +70,25 @@
                 document.getElementById("demo2").innerHTML=jsonData.name;
                 document.getElementById("avatar2").src=jsonData.avatar_url;
             }else{
-                document.getElementById("demo1").innerHTML=`error occure with status ${request2.status} :: ${request2.statusText}`
+                document.getElementById("demo2").innerHTML=`error occure with status ${request2.status} :: ${request2.statusText}`
             }
         }
-        )   
+        ) 
+        let request3 = new XMLHttpRequest();
+        request3.open("GET","https://api.github.com/users/abdulmukhid");
+        request3.send();
+        request3.onload = ( ()=>{
+            console.log(request3);
+            if(request3.status === 200){
+                const jsonData = JSON.parse(request3.response);
+                console.log(jsonData);
+                document.getElementById("demo3").innerHTML=jsonData.name;
+                document.getElementById("avatar3").src=jsonData.avatar_url;
+            }else{
+                document.getElementById("demo3").innerHTML=`error occure with status ${request3.status} :: ${request3.statusText}`
+            }
+        }
+        )  
     </script>  
 </body>
 </html>
