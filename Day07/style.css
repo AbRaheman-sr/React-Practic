@@ -1,0 +1,23 @@
+.main{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.img1{
+    display: inline-block;
+    text-align: center;   
+}
+.img2{
+    display: inline-block;
+    text-align: center;   
+}
+.img3{
+    display: inline-block;
+    text-align: center;
+}
+.avtar{
+    border-radius: 50%;
+    margin-top: 50px;
+    padding-right:20px;
+    width: 350px;   
+}
